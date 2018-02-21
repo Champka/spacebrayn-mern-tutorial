@@ -71,7 +71,7 @@ class Comment extends Component {
  
     render() {
         return (
-            <div class="column is-one-quarter">
+            <div class="column">
                 <div class="card">
                     <div class="card-content" style={ style.comment }>
                         <h3 class="title">{this.props.author}</h3>
