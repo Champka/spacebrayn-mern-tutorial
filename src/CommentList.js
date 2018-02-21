@@ -18,7 +18,7 @@ class CommentList extends Component {
         )
         })
         return (
-            <div style={ style.commentList }>
+            <div class="columns is-gapless is-multiline is-mobile" style={ style.commentList }>
                 { commentNodes }
             </div>
         )

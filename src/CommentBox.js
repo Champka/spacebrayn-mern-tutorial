@@ -61,13 +61,21 @@ class CommentBox extends Component {
 
     render() {
         return (
-            <div style={ style.commentBox }>
-                <h2>Comments:</h2>
-                <CommentList 
-                    onCommentDelete={ this.handleCommentDelete }
-                    onCOmmentUpdate={ this.handleCommentUpdate }
-                    data={ this.state.data }/>
-                <CommentForm onCommentSubmit={ this.handleCommentSubmit }/>
+            <div>
+                <section class="hero is-primary">
+                    <div class="hero-body"style={ style.commentBox }>
+                        <div class="container">
+                            <h1 class="title">Comments:</h1>
+                        </div>
+                    </div>
+                </section>
+                <div>
+                    <CommentList 
+                        onCommentDelete={ this.handleCommentDelete }
+                        onCOmmentUpdate={ this.handleCommentUpdate }
+                        data={ this.state.data }/>
+                    <CommentForm onCommentSubmit={ this.handleCommentSubmit }/>
+                </div>
             </div>
         )
     }

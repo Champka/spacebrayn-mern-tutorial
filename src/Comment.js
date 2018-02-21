@@ -71,17 +71,50 @@ class Comment extends Component {
  
     render() {
         return (
-            <div style={ style.comment }>
-                <h3>{this.props.author}</h3>
-                <span dangerouslySetInnerHTML={ this.rawMarkup() } />
-                <a style={ style.updateLink } href='#' onClick={ this.updateComment }>update</a>
-                <a style={ style.deleteLink } href='#' onClick={ this.deleteComment }>delete</a>
-                {   (this.state.toBeUpdated)
-                    ? (<form onSubmit={ this.handleCommentUpdate }>
-                        <input type='text' placeholder='Update name…' style={ style.commentFormAuthor } value={ this.state.author } onChange= { this.handleAuthorChange } />
-                        <input type='text' placeholder='Update your comment…' style= { style.commentFormText } value={ this.state.text } onChange={ this.handleTextChange } />
-                        <input type='submit' style={ style.commentFormPost } value='Update' /> </form>)
-                    : null}
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <div class="card-content" style={ style.comment }>
+                        <h3 class="title">{this.props.author}</h3>
+                        <span class="subtitle" dangerouslySetInnerHTML={ this.rawMarkup() } />
+                    </div>
+                    <footer class="card-footer">
+                        <div class="card-footer-item">
+                            <a class="button is-primary" style={ style.updateLink } href='#' onClick={ this.updateComment }>update</a>
+                        </div>
+                        <div class="card-footer-item">
+                            <a class="button is-danger" style={ style.deleteLink } href='#' onClick={ this.deleteComment }>delete</a>
+                        </div>
+                    </footer>
+                    <footer class="card-footer">
+                        <div class="card-footer_item">
+                            {   (this.state.toBeUpdated)
+                            ? (
+                                <div class="card-footer-item">
+                                    <form onSubmit={ this.handleCommentUpdate }>
+                                        <div class="field">
+                                            <label class="label">Name</label>
+                                            <div class="control">
+                                                <input class="input" type='text' placeholder='Update name…' style={ style.commentFormAuthor } value={ this.state.author } onChange= { this.handleAuthorChange } />
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label class="label">Comment</label>
+                                            <div class="control">
+                                                <input class="input" type='text' placeholder='Update your comment…' style= { style.commentFormText } value={ this.state.text } onChange={ this.handleTextChange } />
+                                            </div>
+                                        </div>
+                                        <div class="field is-grouped">
+                                            <div class="control">
+                                                <input class="button is-primary" type='submit' style={ style.commentFormPost } value='Update' />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            )
+                            : null}
+                        </div>
+                    </footer>
+                </div>
             </div>
         )
     }

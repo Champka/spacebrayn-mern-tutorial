@@ -32,24 +32,46 @@ class CommentForm extends Component {
 
     render() {
         return (
-            <form style={ style.commentForm } onSubmit={ this.handleSubmit }>
-                <input
-                    type='text'
-                    placeholder='Your name…'
-                    style={ style.commentFormAuthor}
-                    value={ this.state.author }
-                    onChange={ this.handleAuthorChange } />
-                <input
-                    type='text'
-                    placeholder='Say something…'
-                    style={ style.commentFormText}
-                    value={ this.state.text }
-                    onChange={ this.handleTextChange } />
-                <input
-                    type='submit'
-                    style={ style.commentFormPost }
-                    value='Post' />
-            </form>
+            <section class="section">
+                <div class="container">
+                    <h1 class="title">Add a comment</h1>
+                    <form style={ style.commentForm } onSubmit={ this.handleSubmit }>
+                        <div class="field">
+                            <label>Name</label>
+                            <div class="controls">
+                                <input
+                                    class="input"
+                                    type='text'
+                                    placeholder='Your name…'
+                                    style={ style.commentFormAuthor}
+                                    value={ this.state.author }
+                                    onChange={ this.handleAuthorChange } />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Name</label>
+                            <div class="controls">
+                                <input
+                                    class="input"
+                                    type='text'
+                                    placeholder='Say something…'
+                                    style={ style.commentFormText}
+                                    value={ this.state.text }
+                                    onChange={ this.handleTextChange } />
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <input
+                                    class="button is-link"
+                                    type='submit'
+                                    style={ style.commentFormPost }
+                                    value='Post' />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
         )
     }
 }
